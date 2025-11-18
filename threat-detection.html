@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI-Driven Threat Detection</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="logo">
+        <div class="mark">AI</div>
+        <div>
+          <h1>AI and Machine Learning in Network Security: Deep Dive</h1>
+          <div style="color:var(--muted);font-size:13px">Security research • AI/ML • Threat detection • Best practices</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Overview</a>
+        <a href="applications.html">Applications</a>
+        <a href="threat-detection.html" class="active">AI-Driven Threat Detection</a>
+        <a href="ml-models.html">ML Models</a>
+        <a href="future.html">Future Trends</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <h2>AI-Driven Threat Detection</h2>
+      <p>Traditional signature- and rule-based detection systems are fundamentally blind to unknown, polymorphic, and behavior-based attacks. AI-driven threat detection solves this by combining massive-scale data processing with continuous learning.</p>
+      <p>Instead of matching known patterns, modern systems learn what “normal” looks like at scale and flag statistically improbable events in real time.</p>
+    </main>
+
+    <br>
+
+    <main class="card">
+      <h3>Core Detection Paradigms in 2025</h3>
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th style="text-align:left;">Paradigm</th>
+          <th style="text-align:left;">Technique</th>
+          <th style="text-align:left;">Primary Use Case</th>
+          <th style="text-align:left;">Example Vendors (2025)</th>
+        </tr>
+        <tr>
+          <td><strong>Supervised Malware Classification</strong></td>
+          <td>CNNs, Transformers on file/traffic embeddings</td>
+          <td>Zero-day & polymorphic malware</td>
+          <td>Deep Instinct, Microsoft Defender, CrowdStrike Falcon</td>
+        </tr>
+        <tr>
+          <td><strong>Unsupervised Anomaly Detection</strong></td>
+          <td>Autoencoders, Isolation Forest, One-Class SVM</td>
+          <td>Unknown APTs, insider threats</td>
+          <td>Darktrace, Exabeam, Vectra AI</td>
+        </tr>
+        <tr>
+          <td><strong>Behavioral Sequence Modeling</strong></td>
+          <td>LSTM, Transformers, Graph Neural Networks</td>
+          <td>Lateral movement, living-off-the-land</td>
+          <td>Elastic Security, Splunk UBA, Gurucul</td>
+        </tr>
+        <tr>
+          <td><strong>Reinforcement-Learning Threat Hunting</strong></td>
+          <td>Deep Q-Networks, PPO agents</td>
+          <td>Autonomous hypothesis testing</td>
+          <td>CrowdStrike Charlotte AI, Microsoft Security Copilot</td>
+        </tr>
+      </table>
+    </main>
+
+    <main class="card">
+      <h3>How Real-Time AI Detection Works (Simplified Pipeline)</h3>
+      <ol>
+        <li><strong>Data Ingestion</strong> – Network telemetry (NetFlow, PCAP), EDR events, cloud logs, authentication events</li>
+        <li><strong>Feature Engineering → Embeddings</strong> – Raw bytes → static/dynamic analysis → high-dimensional vectors</li>
+        <li><strong>Baseline Learning</strong> – Unsupervised models learn “normal” over 7–30 days</li>
+        <li><strong>Real-Time Scoring</strong> – Every event receives an anomaly/risk score (0–100)</li>
+        <li><strong>Contextual Enrichment</strong> – Identity, asset criticality, threat intel fused via GNNs/LLMs</li>
+        <li><strong>Alert / Auto-Response</strong> – Top 0.001 % of events escalated; low-confidence quarantined automatically</li>
+      </ol>
+    </main>
+
+    <main class="card">
+      <h3>Performance Benchmarks (2025 Independent Testing)</h3>
+      <ul>
+        <li><strong>MITRE ATT&CK Evaluations (2024–2025)</strong><br>
+          CrowdStrike Falcon: 100 % detection, 0 analytic false positives<br>
+          Microsoft Defender for Endpoint: 99.8 % detection</li><br>
+        <li><strong>VirusTotal 0/70 Malware (never-seen samples)</strong><br>
+          Deep Instinct: 99.85 %<br>
+          SentinelOne Singularity: 99.7 %</li><br>
+        <li><strong>UEBA Insider Threat Detection (Carnegie Mellon CERT dataset)</strong><br>
+          Exabeam + Transformer models: 97 % detection at <1 % FPR</li>
+      </ul>
+    </main>
+
+    <main class="card">
+      <h3>False Positives: The Achilles Heel That AI Solved</h3>
+      <p>Legacy IDS/IPS: 50–500 alerts per day, >90 % false<br>
+      AI-native platforms (2025): 3–15 high-fidelity incidents per week</p>
+      <p>Achieved through:</p>
+      <ul>
+        <li>Continual retraining on customer-specific data</li>
+        <li>Risk scoring instead of binary alerts</li>
+        <li>Human-in-the-loop feedback loops (analysts mark FP → model updates in <1 hour)</li>
+      </ul>
+    </main>
+
+    <main class="card">
+      <h3>Network-Specific AI Detection Techniques</h3>
+      <ul>
+        <li><strong>DPI + Deep Learning</strong> – CNNs classify encrypted traffic without decryption (JA4+, TLS fingerprinting)</li>
+        <li><strong>Flow-Based Anomaly Detection</strong> – Transformer models on NetFlow/sFlow sequences detect C2 beacons, DNS tunneling</li>
+        <li><strong>Homoglyph & DGA Detection</strong> – Character-level RNNs flag algorithmically generated domains with >99.9 % accuracy</li>
+      </ul>
+    </main>
+
+    <br>
+    <main class="card">
+      <p><strong>Conclusion:</strong> AI-driven threat detection has crossed the chasm from experimental to mandatory. Organizations that still rely primarily on signatures and static rules are effectively operating without visibility into 60–80 % of modern attacker techniques.</p>
+      <blockquote>“In 2025, if your detection stack isn’t learning faster than the attacker, you’ve already lost.”</blockquote>
+    </main>
+  </div>
+</body>
+</html>

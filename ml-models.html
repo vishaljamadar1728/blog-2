@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Machine Learning Models in Network Security</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="logo">
+        <div class="mark">AI</div>
+        <div>
+          <h1>AI and Machine Learning in Network Security: Deep Dive</h1>
+          <div style="color:var(--muted);font-size:13px">Security research • AI/ML • Threat detection • Best practices</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Overview</a>
+        <a href="applications.html">Applications</a>
+        <a href="threat-detection.html">AI-Driven Threat Detection</a>
+        <a href="ml-models.html" class="active">ML Models</a>
+        <a href="future.html">Future Trends</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <h2>Machine Learning Models Used in Network Security (2025)</h2>
+      <p>The field has moved far beyond simple decision trees and logistic regression. Modern network defenses are powered by massive-scale deep learning, transformer architectures, and hybrid neuro-symbolic systems.</p>
+    </main>
+
+    <br>
+
+    <main class="card">
+      <h3>1. Convolutional Neural Networks (CNNs) on Raw Bytes & Packets</h3>
+      <p>Treat malware PE files, PDFs, or raw network traffic as 1D/2D images.</p>
+      <ul>
+        <li><strong>Representative work:</strong> Microsoft’s DeepGuard, Deep Instinct D-Brain</li>
+        <li><strong>Input:</strong> First 1–10 MB of file or packet bytes → reshaped into grayscale image</li>
+        <li><strong>Performance:</strong> 99.8–99.9 % on VirusTotal 0/70 samples</li>
+        <li><strong>Latency:</strong> <5 ms on GPU, 50 ms on CPU (quantized)</li>
+      </ul>
+    </main>
+
+    <main class="card">
+      <h3>2. Transformer-Based Models (BERT derivatives)</h3>
+      <p>Used for phishing detection, log anomaly detection, and behavioral sequencing.</p>
+      <ul>
+        <li><strong>Examples:</strong> Proofpoint TAP, Abnormal Security, Microsoft Defender for Office</li>
+        <li><strong>Input:</strong> Email text, URLs, PowerShell commands, Sysmon event sequences</li>
+        <li><strong>Accuracy:</strong> >99.9 % phishing / BEC detection with 0.01 % false positives</li>
+      </ul>
+    </main>
+
+    <main class="card">
+      <h3>3. Long Short-Term Memory (LSTM) & GRU Networks</h3>
+      <p>Still dominant for time-series and sequence modeling (NetFlow, authentication logs).</p>
+      <ul>
+        <li><strong>Use cases:</strong> Detecting C2 beacons, DNS tunneling, slow data exfiltration</li>
+        <li><strong>Typical architecture:</strong> Bidirectional LSTM → Attention → Risk score</li>
+      </ul>
+    </main>
+
+    <main class="card">
+      <h3>4. Graph Neural Networks (GNNs)</h3>
+      <p>Model enterprise networks as graphs (users ↔ devices ↔ processes ↔ cloud resources).</p>
+      <ul>
+        <li><strong>Best for:</strong> Lateral movement detection, supply-chain attack mapping</li>
+        <li><strong>Leading implementations:</strong> Cortex XDR (Palo Alto), Neo4j + GraphSAGE in custom SOCs</li>
+        <li><strong>Detection speed:</strong> Full enterprise graph re-scored in 3 seconds</li>
+      </ul>
+    </main>
+
+    <main class="card">
+      <h3>5. Autoencoders & Variational Autoencoders (VAEs)</h3>
+      <p>Unsupervised anomaly detection backbone.</p>
+      <ul>
+        <li><strong>Darktrace Antigena</strong> – Uses thousands of tiny autoencoders per entity</li>
+        <li><strong>Reconstruction error → anomaly score</strong></li>
+        <li>Highly effective against never-before-seen APTs</li>
+      </ul>
+    </main>
+
+    <main class="card">
+      <h3>6. Isolation Forest & One-Class SVM (still relevant)</h3>
+      <p>Lightweight, interpretable, and extremely fast — used in edge/IoT deployments and as ensemble members.</p>
+    </main>
+
+    <main class="card">
+      <h3>7. Large Language Models (LLMs) & Security Copilots</h3>
+      <p>2024–2025 breakthrough: GPT-4-class models fine-tuned on MITRE ATT&CK + internal telemetry.</p>
+      <ul>
+        <li><strong>Microsoft Security Copilot, CrowdStrike Charlotte AI, Google Sec-PaLM</strong></li>
+        <li>Capabilities: Natural-language investigation, automated incident summarization, playbook generation</li>
+        <li>Some organizations now achieve >70 % Tier-1/Tier-2 automation</li>
+      </ul>
+    </main>
+
+    <main class="card">
+      <h3>Model Comparison Table (2025)</h3>
+      <table style="width:100%; border-collapse:collapse; font-size:94%;">
+        <tr>
+          <th style="text-align:left;">Model Family</th>
+          <th>Latency</th>
+          <th>Accuracy (Zero-Day)</th>
+          <th>Explainability</th>
+          <th>Typical Deployment</th>
+        </tr>
+        <tr><td>CNN on bytes</td><td>Very Fast</td><td>Extremely High</td><td>Low</td><td>Endpoint / Cloud</td></tr>
+        <tr><td>Transformers</td><td>Fast</td><td>Highest</td><td>Medium</td><td>Email / Cloud</td></tr>
+        <tr><td>LSTM/GRU</td><td>Medium</td><td>High</td><td>High</td><td>Network / SIEM</td></tr>
+        <tr><td>GNNs</td><td>Medium</td><td>Very High</td><td>Very High</td><td>XDR platforms</td></tr>
+        <tr><td>Autoencoders</td><td>Fast</td><td>High (anomaly)</td><td>Medium</td><td>NDR / UEBA</td></tr>
+        <tr><td>LLMs/Copilots</td><td>Slow</td><td>N/A (reasoning)</td><td>Very High</td><td>SOC augmentation</td></tr>
+      </table>
+    </main>
+
+    <main class="card">
+      <h3>Training Data Reality (2025)</h3>
+      <ul>
+        <li>Commercial vendors: 10–100 billion labeled samples (malware + benign)</li>
+        <li>Daily retraining on customer telemetry (anonymized)</li>
+        <li>Adversarial training + differential privacy now standard</li>
+        <li>Open-source alternatives (e.g., Ember dataset, SOREL-20M) lag ~18–24 months behind</li>
+      </ul>
+    </main>
+
+    <br>
+    <main class="card">
+      <p><strong>Key Takeaway:</strong> There is no single “best” model. Elite platforms (CrowdStrike, SentinelOne, Microsoft, Darktrace, Vectra, Palo Alto Cortex) run <strong>ensembles of 50–500 specialized models</strong> that vote or cascade, achieving near-perfect detection with sub-second latency.</p>
+      <blockquote>In 2025, the most effective cybersecurity ML isn’t one model — it’s an orchestra.</blockquote>
+    </main>
+  </div>
+</body>
+</html>
